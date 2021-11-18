@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "6936406d-aead-4641-b357-3a6a08fd32c2",
+		"name": "Key Generation Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Generate New Key",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"source_name\": \"my-custom-app\",\n    \"key_length\": 8\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{kgsScheme}}://{{kgsHost}}:{{kgsPort}}/key/generate",
+					"protocol": "{{kgsScheme}}",
+					"host": [
+						"{{kgsHost}}"
+					],
+					"port": "{{kgsPort}}",
+					"path": [
+						"key",
+						"generate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Key",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"source\": \"my-custom-app\",\n    \"key\": \"my-custom-key\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{kgsScheme}}://{{kgsHost}}:{{kgsPort}}/key/new",
+					"protocol": "{{kgsScheme}}",
+					"host": [
+						"{{kgsHost}}"
+					],
+					"port": "{{kgsPort}}",
+					"path": [
+						"key",
+						"new"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

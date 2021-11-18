@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "4d4f6a09-5a11-4c0d-b66c-0b70fb9ac857",
+		"name": "URL Shorten App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{usaScheme}}://{{usaHost}}:{{usaPort}}/",
+					"protocol": "{{usaScheme}}",
+					"host": [
+						"{{usaHost}}"
+					],
+					"port": "{{usaPort}}",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shorten URL - Self-Hosted, Generate Slug",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"original_url\": \"https://learnxinyminutes.com/docs/go/\",\n    \"slug_length\": 8\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{usaScheme}}://{{usaHost}}:{{usaPort}}/url/shorten",
+					"protocol": "{{usaScheme}}",
+					"host": [
+						"{{usaHost}}"
+					],
+					"port": "{{usaPort}}",
+					"path": [
+						"url",
+						"shorten"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shorten URL - Self-Hosted, Custom Slug",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"original_url\": \"https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-get.html\",\n    \"custom_slug\": \"mycustomslug\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{usaScheme}}://{{usaHost}}:{{usaPort}}/url/shorten",
+					"protocol": "{{usaScheme}}",
+					"host": [
+						"{{usaHost}}"
+					],
+					"port": "{{usaPort}}",
+					"path": [
+						"url",
+						"shorten"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shorten URL - External Host, Generate Slug",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"original_url\": \"https://learnxinyminutes.com/docs/go/\",\n    \"short_url_host\": \"http://shrtdoma.in\",\n    \"slug_length\": 8\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{usaScheme}}://{{usaHost}}:{{usaPort}}/url/shorten",
+					"protocol": "{{usaScheme}}",
+					"host": [
+						"{{usaHost}}"
+					],
+					"port": "{{usaPort}}",
+					"path": [
+						"url",
+						"shorten"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shorten URL - External Host, Custom Slug",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"original_url\": \"https://learnxinyminutes.com/docs/go/\",\n    \"short_url_host\": \"http://shrtdoma.in\",\n    \"custom_slug\": \"mycustomslug\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{usaScheme}}://{{usaHost}}:{{usaPort}}/url/shorten",
+					"protocol": "{{usaScheme}}",
+					"host": [
+						"{{usaHost}}"
+					],
+					"port": "{{usaPort}}",
+					"path": [
+						"url",
+						"shorten"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Redirect URL - Self-Hosted",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{usaScheme}}://{{usaHost}}:{{usaPort}}/mycustomslug",
+					"protocol": "{{usaScheme}}",
+					"host": [
+						"{{usaHost}}"
+					],
+					"port": "{{usaPort}}",
+					"path": [
+						"mycustomslug"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Redirect URL - External Host",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"short_url\": \"http://shrtdoma.in/mycustomslug\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{usaScheme}}://{{usaHost}}:{{usaPort}}/url/redirect",
+					"protocol": "{{usaScheme}}",
+					"host": [
+						"{{usaHost}}"
+					],
+					"port": "{{usaPort}}",
+					"path": [
+						"url",
+						"redirect"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
